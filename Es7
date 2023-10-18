@@ -1,0 +1,17 @@
+#Baffert Es7
+
+#Classe
+class  Auto:
+    def __init__(self, marca, modello, targa, km_percorsi):
+        self.marca=marca
+        self.modello=modello
+        self.targa=targa
+        self.km_percorsi=km_percorsi
+    def effetua_viaggio(self,km):
+        self.km_percorsi=(km+self.km_percorsi)
+        
+auto1=Auto("Audi","R6","Fu0923ck",1244)
+# auto1()
+#dati necessari per il calcolo
+auto1.effetua_viaggio(10000)
+print(auto1.km_percorsi)
