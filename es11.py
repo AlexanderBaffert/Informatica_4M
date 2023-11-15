@@ -1,0 +1,37 @@
+#Baffert 4M Es11
+#--------------------------------------
+#Class Bike
+#classe generale
+class Bike:
+    def __init__(self,speed,gear) -> None:
+        self.speed=speed
+        self.gear=gear
+    def SpeedUp(self):
+        self.speed=self.speed+1
+    def SpeedDown(self):
+        self.speed=self.speed-1
+#Class MountainBike
+class MountainBike(Bike):
+    def __init__(self,speed,gear,ammortizzatore) -> None:
+        super().__init__(speed,gear)
+        self.ammortizzatore=ammortizzatore
+    def get_ammortizzatore(self):
+        print(f"La velocita' e' di:{self.speed}k/h, mentre sono presenti {self.gear} marce. L'ammortizzatore e': {self.ammortizzatore}")
+    def __str__(self) -> str:
+        return super().__str__()+self.get_ammortizzatore()
+#Class FatBike
+class FatBike(Bike):
+    def __init__(self,speed,gear,spessore_pneumatico) -> None:
+        super().__init__(speed,gear)
+        self.spessore_pneumatico=spessore_pneumatico
+    def getSpessorePneumatico(self):
+        print(f"La velocita' e' di:{self.speed}k/h, mentre sono presenti {self.gear} marce. Lho spessore e' di: {self.spessore_pneumatico} cm")
+    def __str__(self) -> str:
+        return super().__str__()+self.getSpessorePneumatico()
+#--------------------------------------
+#Main    
+stats=Bike(20,7)      
+bike=MountainBike(50,6,True)
+bike.get_ammortizzatore()
+bike_2=FatBike(45,5, 10)
+bike_2.getSpessorePneumatico()
