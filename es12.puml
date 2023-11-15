@@ -1,0 +1,35 @@
+@startuml es12
+Book <|-- Novel
+Novel <|-- ScienceFiction
+Novel <|-- Fantasyclass
+class Book{
+    title:String
+    author:String
+    --
+    constructor(tittle,author):void
+    read():string
+    bookmark_page():void
+    describe():void
+}
+class Novel{
+    genre:String
+    --
+    constructor(genre):void
+    get_genre(genre:String):void
+    describe():String
+}
+class ScienceFiction{
+    futuristic_tech:String
+    --
+    contructor(futuristic_tech):void
+    get_futuristic_tech(futuristic_tech:String):void
+    describe():String
+}
+class Fantasyclass{
+    magic_system:String
+    --
+    constructor(magic_system):void
+    get_magic_system(magic_system):void
+    describe():String
+}
+@enduml
