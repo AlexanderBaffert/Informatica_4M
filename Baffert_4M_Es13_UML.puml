@@ -1,0 +1,16 @@
+@startuml es13
+Person--Passport
+class Person{
+    name:String
+    age:Int
+    passport:None
+    --
+    constructor(name,age)
+    issue_passport:(passport_number, country_of_issues):str
+}
+class Passport{
+    passport_number:String
+    country_of_issues:String
+    
+}
+@enduml
