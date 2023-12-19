@@ -1,0 +1,51 @@
+@startuml es16
+Artist "1" -- "N"  Album : creates
+Album "1" -- "N" Songs : contains
+Songs "N" -- "N" Playlist : contains
+Playlist "N" -- "1" User : belongs
+Subscription "1" -- "N" User : is associated
+PremiumAlbum --|> Album
+class Artist {
+    name:String
+    --
+    constructor(name, Album):void
+    create_album()
+}
+class Album{
+    title:String
+    --
+    constructor(title, Songs):void
+    add_song()
+    contains_Song()
+}
+class Songs{
+    title:String
+    duration:float
+}
+class PremiumAlbum{
+    exclusiveContent:String
+    --
+    constructor(Album, exclusiveContent):void
+}
+class Playlist{
+    name:String
+    --
+    constructor(name, Songs):void
+    contain_Song()
+}
+class Subscription{
+    type:String
+    price:float
+    --
+    constructor(User,type,price):void
+}
+class User{
+    username:String
+    email:String
+    --
+    constructor(Subscription, Playlist, username, email):void
+    create_playlist()
+    create_subscription()
+}
+
+@enduml

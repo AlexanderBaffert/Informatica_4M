@@ -1,0 +1,22 @@
+@startuml es14
+Student "1" -- "n..*" Classroom:has
+class Student{
+    surname:String
+    name:String
+    age:Int
+    gender:String
+    --
+    constructor(name,age,gender,surname)
+}
+class Classroom{
+    id:String
+    school_name:String
+    description:String
+    student_list:list
+    --
+    constructor(id,school_name,description,student_list)
+    add_student:(student)
+    remove_student:(student_number) 
+    count_enrolled_student()
+}
+@enduml

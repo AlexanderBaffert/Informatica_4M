@@ -1,0 +1,24 @@
+@startuml es15
+Student "n" -- "n..*" Course:has
+class Student{
+    surname:String
+    name:String
+    age:Int
+    gender:String
+    --
+    constructor(name,age,gender,surname)
+    enrolled_courses()
+}
+
+class Course{
+    id:String
+    uni_name:String
+    description:String
+    student_list:list
+    --
+    constructor(id,uni_name,description,student_list)
+    add_student()
+    remove_student()
+    count_enrolled_students()
+}
+@enduml

@@ -1,0 +1,65 @@
+@startuml es17
+User <|-- RegularUser
+User <|-- BusinessUser
+Post <|-- TextPost
+Post <|-- ImagePost
+User "1" -- "N" Post:creates
+class User{
+    UserID:String
+    Username:String
+    Email:String
+    Password:String
+    FriendsList:List
+    --
+    constructor(UserID, Username, Email, Password, FriendsList):void
+    AddFriend()
+    RemoveFriend()
+    PostContent()
+}
+class RegularUser{
+    Interests:String
+    ActivityLog:String
+    --
+    constructor(nterests, ActivityLog):void
+    LikePost() 
+    CommentOnPost()
+}
+class BusinessUser{
+    BusinessID:String
+    Services:String
+    CustomerReviews:String
+    --
+    constructor(BusinessID, Services, CustomerReviews):void
+    Advertise()
+    RespondToReviews()
+}
+class Post{
+    PostID:String
+    Content:String
+    Timestamp:String
+    LikesCount:Int
+    Comments:String
+    --
+    constructor(PostID, Content, Timestamp, LikesCount, Comments):void
+    Like()
+    Comment() 
+    Share()
+}
+class TextPost{
+    WordCount:Int
+    Language:String
+    --
+    constructor(WordCount, Language):void
+    AnalyzeSentiment()
+}
+class ImagePost{
+    ImageURL:String
+    Resolution:Int
+    FiltersApplied:String
+    --
+    constructor(ImageURL, Resolution, FiltersApplied):void
+    ApplyFilter() 
+    TagPeople()
+}
+
+@enduml
